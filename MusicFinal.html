@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Quiz</title>
+    <link rel="stylesheet" href="MusicFinal.css">
+    
+</head>
+
+<body>
+    <header id="Basliq">
+        <h1 id="neetiicee">Guess the Music!</h1>
+        <div class="Audio">
+            <audio class="playSound" controls autoplay></audio>
+        </div>
+    </header>
+
+    <main>
+        <button id="random" onclick="randomSound()">Play Random Sound</button>
+        <section class="Variantlar">
+            <h2>Choose the Correct Answer:</h2>
+            <div class="Variantlar">
+                <a href="#Basliq" id="1" onclick="correctness(this)"> Hacıbəyli “Koroğlu” operasından unvertüra</a>
+                <a href="#Basliq" id="2" onclick="correctness(this)">Üzeyir Hacıbəyli “Leyli və Məcnun” operasından
+                    Şəbi-Hicran xoru</a>
+                <a href="#Basliq" id="3" onclick="correctness(this)">Üzeyir Hacıbəyli “Leyli və Məcnun” operasından
+                    qızların xoru (“Bu gələn yara bənzər”)</a>
+                <a href="#Basliq" id="4" onclick="correctness(this)">Üzeyir Hacıbəyli “Arazbarı”</a>
+                <a href="#Basliq" id="5" onclick="correctness(this)">Üzeyir Hacıbəyli “Arşın mal alan” operettasından
+                    “Aşiq oldum”</a>
+                <a href="#Basliq" id="6" onclick="correctness(this)">Üzeyir Hacıbəyli “Cəngi”</a>
+                <a href="#Basliq" id="7" onclick="correctness(this)">Üzeyir Hacıbəyli “Sevgili canan” romansı</a>
+                <a href="#Basliq" id="8" onclick="correctness(this)">Üzeyir Hacıbəyli “Sənsiz” romansı</a>
+                <a href="#Basliq" id="9" onclick="correctness(this)">Soltan Hacıbəyov “Karvan simfonik poeması”</a>
+                <a href="#Basliq" id="10" onclick="correctness(this)">Asəf Zeynallı “Ölkəm” romansı</a>
+                <a href="#Basliq" id="11" onclick="correctness(this)">Asəf Zeynallı “Muğamsayağı” </a>
+                <a href="#Basliq" id="12" onclick="correctness(this)">Fikrət Əmirov “Azərbaycan kapriççiosu”</a>
+                <a href="#Basliq" id="13" onclick="correctness(this)">Fikrət Əmirov “Sevil” operasından Dilbərin
+                    ariyası</a>
+                <a href="#Basliq" id="14" onclick="correctness(this)">Fikrət Əmirov “Min bir gecə” baletindən Orgiya</a>
+                <a href="#Basliq" id="15" onclick="correctness(this)">Fikrət Əmirov “Min bir gecə” baletindən Şəhrizadın
+                    bayramı</a>
+                <a href="#Basliq" id="16" onclick="correctness(this)">Qara Qarayev “Yeddi gözəl” baletindən Vals</a>
+                <a href="#Basliq" id="17" onclick="correctness(this)">Qara Qarayev “Yeddi gözəl” baletindən Aişənin
+                    rəqsi</a>
+                <a href="#Basliq" id="18" onclick="correctness(this)">Qara Qarayev “İldırımlı yollarla” baletindən
+                    Ehtiraslı qızın rəqsi</a>
+                <a href="#Basliq" id="19" onclick="correctness(this)">Cövdət Hacıyev piano üçün “Ballada”</a>
+                <a href="#Basliq" id="20" onclick="correctness(this)">Arif Məlikov “Məhəbbət Əfsanəsi” baletindən
+                    Komdenin arzuları</a>
+                <a href="#Basliq" id="21" onclick="correctness(this)">Xəyyam Mirzəzadə Triptix</a>
+                <a href="#Basliq" id="22" onclick="correctness(this)">Aqşin Əlizadə Bayatılar</a>
+                <a href="#Basliq" id="23" onclick="correctness(this)">Firəngiz Əlizadə Rəqs</a>
+                <a href="#Basliq" id="24" onclick="correctness(this)">Rəhilə Həsənova Monad</a>
+                <a href="#Basliq" id="25" onclick="correctness(this)">Tofiq Quliyev “Sənə də qalmaz” mahnısı</a>
+                <a href="#Basliq" id="26" onclick="correctness(this)">Rauf Hacıyev “Sevgilim”</a>
+                <a href="#Basliq" id="27" onclick="correctness(this)">Səid Rüstəmov “Hardasan” </a>
+                <a href="#Basliq" id="28" onclick="correctness(this)">Vaqif Mustafazadə “Düşüncə”</a>
+                <a href="#Basliq" id="29" onclick="correctness(this)">Rafiq Babayev “Anlamaq istəyirəm”</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Music Quiz Game</p>
+    </footer>
+
+    <script>
+        const mySounds = ["Musiqiler/Koroğlu Uvertürası - Niyazi (1981).mp3", "Musiqiler/Şəbi Hicran Leyli və Məcnun operasından.mp3", "Musiqiler/Üzeyir Hacıbəyov- Bu gələn yara bənzər.mp3", "Musiqiler/Uzeir Hacibeyov  Arazbari.mp3", "Musiqiler/Sona Aslanova - Aşiq oldum. mus. Üzeyir Hacıbəyli..mp3", "Musiqiler/Üzeyir Hacıbəyovun ifasında Cəngi  bərpa videosu.mp3", "Musiqiler/Müslüm Maqomayev - Sevgili Canan.mp3", "Musiqiler/Муслим Магомаев - Без тебя ( Сенсиз ). Muslim Magomaev - Sensiz.mp3", "Musiqiler/Soltan Hajibeyov  Caravan symphonic poem.mp3", "Musiqiler/Cəfər Cabbarlı- Ölkəm.mp3", "Musiqiler/Asaf Zeynally - Mughamsayagi (for violin and string orchestra).mp3", "Musiqiler/Fikrət Əmirov.  Azərbaycan Kapriçiyosu.mp3", "Musiqiler/Sevil operası - Dilbərin ariyası (Fikrət Əmirov).mp3", "Musiqiler/Fikrət Əmirov - 1001 gecə baletindən Orgiya.mp3", "Musiqiler/Fikrət Əmirov - 1001 gecə baletindən Şəhrizadın bayramı.mp3", "Musiqiler/Qara Qarayev - Yeddi gözəl (vals) #qaraqarayev #garagareyev #gara #qara #karayev #karayev.mp3", "Musiqiler/Q.Qarayev _ Yeddi Gözəl baletindən Ayşənin rəqsi.mp3", "Musiqiler/Gara Garayev Ildırımlı yollarla baletindən Qızların rəqsi..mp3", "Musiqiler/Джевдет Гаджиев  Jovdat Hajiyev_ Баллада (Ballada, 1952).mp3", "Musiqiler/Arif Məlikov - Komdenin arzuları.mp3", "Musiqiler/Triptix - Xəyyam Mirzəzadə.mp3", "Musiqiler/A.Əlizadə. Bayatılar..mp3", "Musiqiler/Franghiz Ali-Zadeh_ Reqs - Owls.mp3", "Musiqiler/Rahilia Hasanova  Monad [w score].mp3", "Musiqiler/Tofiq Quliyev - Sənə də qalmaz  Yalqızam (Rəşid Behbudov).mp3", "Musiqiler/Rauf Haciyev - sevgilim.mp3", "Musiqiler/Sovkət Ələkbərova - Hardasan.mp3", "Musiqiler/Vaqif Mustafazadə - Düşüncə (Rəsmi Audio).mp3", "Musiqiler/Rafiq Babayev Anlamaq İstəyirəm.mp3"];
+
+        let currentSoundIndex = -1;
+
+        function randomSound() {
+            const feedback = document.getElementById('neetiicee');
+            feedback.innerText = '';
+            currentSoundIndex = Math.floor(Math.random() * mySounds.length);
+            const audioElement = document.querySelector('.Audio audio');
+            audioElement.src = mySounds[currentSoundIndex];
+            audioElement.play();
+        }
+
+        function correctness(button) {
+            const buttonId = parseInt(button.id, 10);
+            const feedback = document.getElementById('neetiicee');
+            const correctSoundIndex = currentSoundIndex;
+            const correctButton = document.getElementById(correctSoundIndex + 1);
+
+            if (buttonId === correctSoundIndex + 1) {
+                var audio = new Audio('Musiqiler/correct-choice-43861.mp3');
+                audio.play();
+                feedback.innerText = 'Correct!';
+                feedback.style.color = 'green';
+            } else {
+                var audio = new Audio('Musiqiler/wrong-47985.mp3');
+                audio.play();
+                feedback.innerText = 'Wrong! Correct Answer: ' + correctButton.innerText;
+                feedback.style.color = 'red';
+            }
+        }
+    </script>
+</body>
+
+</html>
